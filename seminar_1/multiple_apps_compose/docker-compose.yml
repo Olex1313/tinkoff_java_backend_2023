@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  mongodb:
+    image: mongo:5.0.15
+    volumes:
+      - mongodata:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: temperature
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodata:
