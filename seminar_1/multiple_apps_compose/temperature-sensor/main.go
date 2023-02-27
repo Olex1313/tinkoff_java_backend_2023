@@ -19,6 +19,7 @@ func newTempResponse(temperature int, sensorUuid string) *tempResponse {
 }
 
 func sensorHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	min := -15
 	max := 0
 	temperature := rand.Intn(max-min) + min
