@@ -6,10 +6,28 @@ services:
     image: mongo:5.0.15
     volumes:
       - mongodata:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     environment:
-      MONGO_INITDB_DATABASE: temperature
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: tempdb
     ports:
       - "27017:27017"
+
+  temperature-sensor-1:
+    image: temperature-sensor:latest
+    environment:
+      SENSOR_UUID: f89b336d-e18f-4e2b-9fd8-b9218c4be162
+      SERVER_PORT: 8080
+    ports:
+      - "8080"
+  temperature-sensor-2:
+    image: temperature-sensor:latest
+    environment:
+      SENSOR_UUID: ca5183c4-4434-4a3e-bf65-a9b1f1421711
+      SERVER_PORT: 8080
+    ports:
+      - "8080"
 
 volumes:
   mongodata:
