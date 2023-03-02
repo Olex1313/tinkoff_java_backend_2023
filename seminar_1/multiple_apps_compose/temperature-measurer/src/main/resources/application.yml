@@ -1,0 +1,24 @@
+management:
+  server:
+    port: ${MANAGEMENT_SERVER_PORT:8095}
+
+sensors: ${SENSORS_URI:http://localhost:52338,http://localhost:52337}
+
+logging:
+  level:
+    reactor:
+      netty:
+        http:
+          client: ${LOGGING_LEVEL:DEBUG}
+
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      port: ${MONGO_PORT:27017}
+      username: ${MONGO_USER:tempuser}
+      password: ${MONGO_PASSWORD:crackme}
+      database: ${MONGO_DATABASE:tempdb}
+
+server:
+  port: ${SERVER_PORT:8094}
