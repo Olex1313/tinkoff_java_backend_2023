@@ -15,6 +15,6 @@ public interface FeatureToggleService {
 
     Optional<FeatureToggle> update(FeatureToggle featureToggle);
 
-    void deleteByName(String name);
+    boolean deleteByName(String name);
 
 }

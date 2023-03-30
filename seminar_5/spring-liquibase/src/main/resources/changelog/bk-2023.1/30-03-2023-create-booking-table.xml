@@ -1,0 +1,44 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="30-03-2023-create-booking-table" author="a.a.limonov">
+        <createTable tableName="booking">
+            <column name="id" type="serial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="from" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="client_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="30-03-2023-add-booking-client-fk-constraint" author="a.a.limonov">
+        <addForeignKeyConstraint
+                baseTableName="booking"
+                baseColumnNames="client_id"
+                constraintName="booking_client_fk"
+                referencedTableName="client"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="30-03-2023-add-booking-client-restaurant-fk-constraint" author="a.a.limonov">
+        <addForeignKeyConstraint
+                baseTableName="booking"
+                baseColumnNames="restaurant_id"
+                constraintName="booking_restaurant_fk"
+                referencedTableName="restaurant"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

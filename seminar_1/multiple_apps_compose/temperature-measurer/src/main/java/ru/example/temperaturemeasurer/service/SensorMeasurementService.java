@@ -2,6 +2,8 @@ package ru.example.temperaturemeasurer.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -20,6 +22,8 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class SensorMeasurementService {
+
+    private final Logger logger = LoggerFactory.getLogger(SensorMeasurementService.class);
 
     private final WebClient webClient;
     private final ReactiveMongoTemplate mongoTemplate;
