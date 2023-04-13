@@ -3,4 +3,17 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
+    <changeSet id="30-03-2023-add-vip-column-to-client-table" author="a.a.limonov">
+        <preConditions onError="MARK_RAN">
+            <not>
+                <columnExists tableName="client" columnName="vip"/>
+            </not>
+        </preConditions>
+        <addColumn tableName="client">
+            <column name="vip" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

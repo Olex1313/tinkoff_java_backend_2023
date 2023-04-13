@@ -1,7 +1,7 @@
-package ru.edu.springliquibase.model.entity;
+package ru.example.locks.model.entity;
 
-import jakarta.annotation.Nullable;
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 @Data
 public class Client {
@@ -11,5 +11,7 @@ public class Client {
     private String lastName;
     @Nullable
     private String middleName;
+
+    private long lockVersion;
 
 }

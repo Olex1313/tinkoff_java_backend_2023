@@ -5,10 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <include file="changelog/bk-2023.1/30-03-2023-create-client-table.xml"/>
-    <include file="changelog/bk-2023.1/30-03-2023-create-restaurant-table.xml"/>
-    <include file="changelog/bk-2023.1/30-03-2023-create-booking-table.xml"/>
-
-    <include file="changelog/bk-2023.2/30-03-2023-add-vip-column.xml"/>
+    <include file="/changelog/lk-2023.1/30-03-2023-create-client-table.xml"/>
 
 </databaseChangeLog>

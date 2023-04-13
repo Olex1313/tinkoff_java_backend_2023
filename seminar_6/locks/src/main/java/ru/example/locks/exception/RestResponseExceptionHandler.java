@@ -1,4 +1,4 @@
-package ru.edu.springliquibase.exception;
+package ru.example.locks.exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,17 +22,5 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
             new HttpHeaders(), HttpStatus.NOT_FOUND, request
         );
     }
-
-    @ExceptionHandler(value = {IllegalBookingException.class})
-    protected ResponseEntity<Object> handleIllegalBookingException(
-        IllegalBookingException exception, WebRequest request
-    ) {
-        return handleExceptionInternal(
-            exception, Map.of("error", exception.getMessage()),
-            new HttpHeaders(), HttpStatus.BAD_REQUEST, request
-        );
-    }
-
-
 
 }

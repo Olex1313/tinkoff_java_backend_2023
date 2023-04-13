@@ -1,4 +1,4 @@
-package ru.edu.springliquibase.exception;
+package ru.example.locks.exception;
 
 public class NotFoundException extends RuntimeException {
 
