@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.edu.springliquibase.model.entity.Booking;
 import ru.edu.springliquibase.model.request.ChangeBookingTimeRequest;
 import ru.edu.springliquibase.model.request.CreateBookingRequest;
-import ru.edu.springliquibase.service.BookingService;
+import ru.edu.springliquibase.vipbooking.BookingService;
 
 @RestController
 @RequiredArgsConstructor

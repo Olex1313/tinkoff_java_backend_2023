@@ -1,4 +1,4 @@
-package ru.edu.springliquibase.service;
+package ru.edu.springliquibase.vipbooking;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +12,8 @@ import ru.edu.springliquibase.model.entity.Restaurant;
 import ru.edu.springliquibase.model.request.ChangeBookingTimeRequest;
 import ru.edu.springliquibase.model.request.CreateBookingRequest;
 import ru.edu.springliquibase.repository.BookingRepository;
+import ru.edu.springliquibase.service.ClientService;
+import ru.edu.springliquibase.service.RestaurantService;
 
 import java.util.List;
 

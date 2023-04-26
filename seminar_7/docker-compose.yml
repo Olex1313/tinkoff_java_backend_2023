@@ -1,0 +1,11 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ycode
+      POSTGRES_PASSWORD: ycode
+      POSTGRES_DB: ycode
+    restart: unless-stopped
